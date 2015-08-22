@@ -14,6 +14,7 @@
 #import "Constants.h"
 #import "MenuImage.h"
 #import "AppDelegate.h"
+#import "Azure.h"
 
 //pods
 #import <Parse/Parse.h>
@@ -147,6 +148,8 @@ static NSString *cellIdentifier = @"cellIdentifier";
 
 	if (object && [object objectForKey:CAT_CLASS_KEY_PHOTO]) {
 		cell.imageView.file = [object objectForKey:CAT_CLASS_KEY_PHOTO];
+		NSLog(@"%s %@ %@", __PRETTY_FUNCTION__, NSStringFromClass(self.class), cell.imageView.file.url);
+		[Azure azureFaceAPI:cell.imageView.file.url];
 
 		// PFQTVC will take care of asynchronously downloading files, but will only load them when the tableview is not moving. If the data is there, let's load it right away.
 		if ([cell.imageView.file isDataAvailable]) {
