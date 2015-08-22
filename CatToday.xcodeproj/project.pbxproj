@@ -32,6 +32,8 @@
 		DB3E90681B8856CA005E9FA5 /* PrivateKey.h in Sources */ = {isa = PBXBuildFile; fileRef = DB3E90671B8856CA005E9FA5 /* PrivateKey.h */; };
 		DB3E906C1B88636E005E9FA5 /* UIColor+CatToday.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E906B1B88636E005E9FA5 /* UIColor+CatToday.m */; };
 		DB3E90701B887024005E9FA5 /* PFObject+CatToday.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E906F1B887024005E9FA5 /* PFObject+CatToday.m */; };
+		DB57581A1B8898BA006AD7FC /* TimeLineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5758191B8898BA006AD7FC /* TimeLineLayout.m */; };
+		DB57581D1B889906006AD7FC /* WhiteDecorationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB57581C1B889906006AD7FC /* WhiteDecorationCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,10 @@
 		DB3E906B1B88636E005E9FA5 /* UIColor+CatToday.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CatToday.m"; sourceTree = "<group>"; };
 		DB3E906E1B887024005E9FA5 /* PFObject+CatToday.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PFObject+CatToday.h"; sourceTree = "<group>"; };
 		DB3E906F1B887024005E9FA5 /* PFObject+CatToday.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PFObject+CatToday.m"; sourceTree = "<group>"; };
+		DB5758181B8898BA006AD7FC /* TimeLineLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeLineLayout.h; sourceTree = "<group>"; };
+		DB5758191B8898BA006AD7FC /* TimeLineLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeLineLayout.m; sourceTree = "<group>"; };
+		DB57581B1B889906006AD7FC /* WhiteDecorationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhiteDecorationCell.h; sourceTree = "<group>"; };
+		DB57581C1B889906006AD7FC /* WhiteDecorationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhiteDecorationCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,10 +173,7 @@
 				C8CE43C41B883AA100FE88BD /* ViewController.h */,
 				C8CE43C51B883AA100FE88BD /* ViewController.m */,
 				DB3E906D1B886373005E9FA5 /* Common */,
-				DB3E905F1B884FEE005E9FA5 /* CatTodayTimelineVC.h */,
-				DB3E90601B884FEE005E9FA5 /* CatTodayTimelineVC.m */,
-				DB3E90621B88522A005E9FA5 /* CatCollectionViewCell.h */,
-				DB3E90631B88522A005E9FA5 /* CatCollectionViewCell.m */,
+				DB5758171B8898AD006AD7FC /* CollectionView */,
 				C8CE43C71B883AA100FE88BD /* Main.storyboard */,
 				C8CE43CA1B883AA100FE88BD /* Images.xcassets */,
 				C8CE43CC1B883AA100FE88BD /* LaunchScreen.xib */,
@@ -248,6 +251,21 @@
 				DB3E906F1B887024005E9FA5 /* PFObject+CatToday.m */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		DB5758171B8898AD006AD7FC /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				DB57581B1B889906006AD7FC /* WhiteDecorationCell.h */,
+				DB57581C1B889906006AD7FC /* WhiteDecorationCell.m */,
+				DB5758181B8898BA006AD7FC /* TimeLineLayout.h */,
+				DB5758191B8898BA006AD7FC /* TimeLineLayout.m */,
+				DB3E905F1B884FEE005E9FA5 /* CatTodayTimelineVC.h */,
+				DB3E90601B884FEE005E9FA5 /* CatTodayTimelineVC.m */,
+				DB3E90621B88522A005E9FA5 /* CatCollectionViewCell.h */,
+				DB3E90631B88522A005E9FA5 /* CatCollectionViewCell.m */,
+			);
+			name = CollectionView;
 			sourceTree = "<group>";
 		};
 		E782FF2DDDF7C2995F3432BA /* Pods */ = {
@@ -441,10 +459,12 @@
 				C8CE43C61B883AA100FE88BD /* ViewController.m in Sources */,
 				C8CE43C31B883AA100FE88BD /* AppDelegate.m in Sources */,
 				DB3E90661B88559D005E9FA5 /* CatToday-Prefix.m in Sources */,
+				DB57581A1B8898BA006AD7FC /* TimeLineLayout.m in Sources */,
 				DB3E90611B884FEE005E9FA5 /* CatTodayTimelineVC.m in Sources */,
 				C8CE43C01B883AA100FE88BD /* main.m in Sources */,
 				DB3E90701B887024005E9FA5 /* PFObject+CatToday.m in Sources */,
 				DB3E906C1B88636E005E9FA5 /* UIColor+CatToday.m in Sources */,
+				DB57581D1B889906006AD7FC /* WhiteDecorationCell.m in Sources */,
 				DB3E90641B88522A005E9FA5 /* CatCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

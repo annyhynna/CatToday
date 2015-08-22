@@ -14,6 +14,9 @@
 + (UIColor *)testBlue;
 + (UIColor *)testGreen;
 
++ (UIColor *)mainPageBackground;
++ (UIColor *)mainPageDecorationBackground;
+
 //
 + (UIColor *)colorWithHex:(int)hex;
 + (UIColor *)colorWithHex:(int)hex alpha:(CGFloat)alpha;

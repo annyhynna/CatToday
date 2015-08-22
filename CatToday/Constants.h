@@ -13,4 +13,6 @@
 #define CAT_CLASS_KEY_NAME @"name"
 #define CAT_CLASS_KEY_PHOTO @"photo"
 
+#define DECORATION_MARGIN 6.0f
+
 #endif
