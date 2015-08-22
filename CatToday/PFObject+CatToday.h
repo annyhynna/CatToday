@@ -10,4 +10,5 @@
 
 @interface PFObject (CatToday)
 - (NSString *)getName;
+- (BOOL)isEqualToObject:(PFObject *)object;
 @end
