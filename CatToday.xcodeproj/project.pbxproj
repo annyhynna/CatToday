@@ -25,6 +25,13 @@
 		C8CE44841B885A9300FE88BD /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8CE44831B885A9300FE88BD /* TodayViewController.m */; };
 		C8CE44851B88623700FE88BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8CE43CA1B883AA100FE88BD /* Images.xcassets */; };
 		C8CE44871B887D5700FE88BD /* cat_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = C8CE44861B887D5700FE88BD /* cat_1024.png */; };
+		D8DEB5DD946BC5FB5D76F4CB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34407B8E900D13FB247E9CEF /* libPods.a */; };
+		DB3E90611B884FEE005E9FA5 /* CatTodayTimelineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E90601B884FEE005E9FA5 /* CatTodayTimelineVC.m */; };
+		DB3E90641B88522A005E9FA5 /* CatCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E90631B88522A005E9FA5 /* CatCollectionViewCell.m */; };
+		DB3E90661B88559D005E9FA5 /* CatToday-Prefix.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E90651B88559D005E9FA5 /* CatToday-Prefix.m */; };
+		DB3E90681B8856CA005E9FA5 /* PrivateKey.h in Sources */ = {isa = PBXBuildFile; fileRef = DB3E90671B8856CA005E9FA5 /* PrivateKey.h */; };
+		DB3E906C1B88636E005E9FA5 /* UIColor+CatToday.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E906B1B88636E005E9FA5 /* UIColor+CatToday.m */; };
+		DB3E90701B887024005E9FA5 /* PFObject+CatToday.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E906F1B887024005E9FA5 /* PFObject+CatToday.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +66,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1F52DC468E87CA4E7775624A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		34407B8E900D13FB247E9CEF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC62129101A35A15FFDCBFC7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C8CE43BA1B883AA100FE88BD /* CatToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8CE43BE1B883AA100FE88BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8CE43BF1B883AA100FE88BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -82,6 +92,17 @@
 		C8CE44821B885A9300FE88BD /* TodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
 		C8CE44831B885A9300FE88BD /* TodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
 		C8CE44861B887D5700FE88BD /* cat_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cat_1024.png; sourceTree = "<group>"; };
+		DB3E905F1B884FEE005E9FA5 /* CatTodayTimelineVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatTodayTimelineVC.h; sourceTree = "<group>"; };
+		DB3E90601B884FEE005E9FA5 /* CatTodayTimelineVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatTodayTimelineVC.m; sourceTree = "<group>"; };
+		DB3E90621B88522A005E9FA5 /* CatCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatCollectionViewCell.h; sourceTree = "<group>"; };
+		DB3E90631B88522A005E9FA5 /* CatCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatCollectionViewCell.m; sourceTree = "<group>"; };
+		DB3E90651B88559D005E9FA5 /* CatToday-Prefix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CatToday-Prefix.m"; sourceTree = "<group>"; };
+		DB3E90671B8856CA005E9FA5 /* PrivateKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivateKey.h; sourceTree = "<group>"; };
+		DB3E90691B885C15005E9FA5 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		DB3E906A1B88636E005E9FA5 /* UIColor+CatToday.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CatToday.h"; sourceTree = "<group>"; };
+		DB3E906B1B88636E005E9FA5 /* UIColor+CatToday.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CatToday.m"; sourceTree = "<group>"; };
+		DB3E906E1B887024005E9FA5 /* PFObject+CatToday.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PFObject+CatToday.h"; sourceTree = "<group>"; };
+		DB3E906F1B887024005E9FA5 /* PFObject+CatToday.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PFObject+CatToday.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +112,7 @@
 			files = (
 				C8CE43FD1B88520600FE88BD /* CoreMedia.framework in Frameworks */,
 				C8CE43FB1B88504D00FE88BD /* CoreData.framework in Frameworks */,
+				D8DEB5DD946BC5FB5D76F4CB /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +144,8 @@
 				C8CE44221B8855F600FE88BD /* CatToday Widget */,
 				C8CE43E81B8847A300FE88BD /* Frameworks */,
 				C8CE43BB1B883AA100FE88BD /* Products */,
+				E782FF2DDDF7C2995F3432BA /* Pods */,
+				F42844B0507E400D01B75F04 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,6 +166,11 @@
 				C8CE43C21B883AA100FE88BD /* AppDelegate.m */,
 				C8CE43C41B883AA100FE88BD /* ViewController.h */,
 				C8CE43C51B883AA100FE88BD /* ViewController.m */,
+				DB3E906D1B886373005E9FA5 /* Common */,
+				DB3E905F1B884FEE005E9FA5 /* CatTodayTimelineVC.h */,
+				DB3E90601B884FEE005E9FA5 /* CatTodayTimelineVC.m */,
+				DB3E90621B88522A005E9FA5 /* CatCollectionViewCell.h */,
+				DB3E90631B88522A005E9FA5 /* CatCollectionViewCell.m */,
 				C8CE43C71B883AA100FE88BD /* Main.storyboard */,
 				C8CE43CA1B883AA100FE88BD /* Images.xcassets */,
 				C8CE43CC1B883AA100FE88BD /* LaunchScreen.xib */,
@@ -153,6 +182,9 @@
 		C8CE43BD1B883AA100FE88BD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DB3E90671B8856CA005E9FA5 /* PrivateKey.h */,
+				DB3E90691B885C15005E9FA5 /* Constants.h */,
+				DB3E90651B88559D005E9FA5 /* CatToday-Prefix.m */,
 				C8CE43BE1B883AA100FE88BD /* Info.plist */,
 				C8CE43BF1B883AA100FE88BD /* main.m */,
 			);
@@ -205,6 +237,33 @@
 				C8CE44241B8855F600FE88BD /* Info.plist */,
 			);
 			name = "Supporting Files";
+		}
+		DB3E906D1B886373005E9FA5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DB3E906A1B88636E005E9FA5 /* UIColor+CatToday.h */,
+				DB3E906B1B88636E005E9FA5 /* UIColor+CatToday.m */,
+				DB3E906E1B887024005E9FA5 /* PFObject+CatToday.h */,
+				DB3E906F1B887024005E9FA5 /* PFObject+CatToday.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		E782FF2DDDF7C2995F3432BA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC62129101A35A15FFDCBFC7 /* Pods.debug.xcconfig */,
+				1F52DC468E87CA4E7775624A /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F42844B0507E400D01B75F04 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34407B8E900D13FB247E9CEF /* libPods.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,10 +273,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8CE43DD1B883AA100FE88BD /* Build configuration list for PBXNativeTarget "CatToday" */;
 			buildPhases = (
+				02914FF1C87188FBF110DFB3 /* Check Pods Manifest.lock */,
 				C8CE43B61B883AA100FE88BD /* Sources */,
 				C8CE43B71B883AA100FE88BD /* Frameworks */,
 				C8CE43B81B883AA100FE88BD /* Resources */,
 				C8CE43F91B8847A300FE88BD /* Embed App Extensions */,
+				12DD17E83E3F5CB851AFBE8E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -336,14 +397,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		02914FF1C87188FBF110DFB3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		12DD17E83E3F5CB851AFBE8E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C8CE43B61B883AA100FE88BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB3E90681B8856CA005E9FA5 /* PrivateKey.h in Sources */,
 				C8CE43C61B883AA100FE88BD /* ViewController.m in Sources */,
 				C8CE43C31B883AA100FE88BD /* AppDelegate.m in Sources */,
+				DB3E90661B88559D005E9FA5 /* CatToday-Prefix.m in Sources */,
+				DB3E90611B884FEE005E9FA5 /* CatTodayTimelineVC.m in Sources */,
 				C8CE43C01B883AA100FE88BD /* main.m in Sources */,
+				DB3E90701B887024005E9FA5 /* PFObject+CatToday.m in Sources */,
+				DB3E906C1B88636E005E9FA5 /* UIColor+CatToday.m in Sources */,
+				DB3E90641B88522A005E9FA5 /* CatCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +580,7 @@
 		};
 		C8CE43DE1B883AA100FE88BD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC62129101A35A15FFDCBFC7 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-3";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
@@ -491,6 +592,7 @@
 		};
 		C8CE43DF1B883AA100FE88BD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F52DC468E87CA4E7775624A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-3";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
@@ -579,6 +681,7 @@
 				C8CE43DF1B883AA100FE88BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C8CE43E01B883AA100FE88BD /* Build configuration list for PBXNativeTarget "CatTodayTests" */ = {
 			isa = XCConfigurationList;
@@ -587,6 +690,7 @@
 				C8CE43E21B883AA100FE88BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C8CE442D1B8855F600FE88BD /* Build configuration list for PBXNativeTarget "CatToday Widget" */ = {
 			isa = XCConfigurationList;
