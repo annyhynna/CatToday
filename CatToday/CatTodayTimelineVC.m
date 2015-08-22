@@ -10,6 +10,7 @@
 #import "CatCollectionViewCell.h"
 #import "Constants.h"
 #import "PFObject+CatToday.h"
+#import "UIColor+CatToday.h"
 
 //pods
 #import <Parse/Parse.h>
@@ -30,6 +31,13 @@ static NSString *cellIdentifier = @"cellIdentifier";
 	[self.collectionView registerClass:[CatCollectionViewCell class]
 			forCellWithReuseIdentifier:cellIdentifier];
 
+	[self uiSetting];
+	//[self createNewCat];
+}
+
+- (void)uiSetting
+{
+	self.collectionView.backgroundColor = [UIColor mainPageBackground];
 	self.paginationEnabled = NO;
 	self.pullToRefreshEnabled = NO;
 	((UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout).scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -44,8 +52,6 @@ static NSString *cellIdentifier = @"cellIdentifier";
 	if ([self respondsToSelector:@selector(automaticallyAdjustsScrollViewInsets)]) {
 		self.automaticallyAdjustsScrollViewInsets = NO;
 	}
-	
-	//[self createNewCat];
 }
 
 - (void)createNewCat

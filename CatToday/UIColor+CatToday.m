@@ -10,6 +10,9 @@
 
 @implementation UIColor (CatToday)
 
++ (UIColor *)mainPageBackground { return [UIColor colorWithHex:0xd7d7d7]; }
++ (UIColor *)mainPageDecorationBackground { return [UIColor colorWithHex:0xfafafa]; }
+
 + (UIColor *)testRed { return [UIColor colorWithRed:1.0 green:0 blue:0 alpha:0.3]; }
 + (UIColor *)testBlue { return [UIColor colorWithRed:0 green:0 blue:1.0 alpha:0.3]; }
 + (UIColor *)testGreen { return [UIColor colorWithRed:0 green:1.0 blue:0 alpha:0.3]; }
