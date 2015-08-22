@@ -17,6 +17,13 @@
 	}
 	return @"";
 }
+- (NSString *)getInfo
+{
+	if (self[CAT_CLASS_KEY_NAME]) {
+		return self[CAT_CLASS_KEY_INFO];
+	}
+	return @"";
+}
 - (BOOL)isEqualToObject:(PFObject *)object
 {
 	return [self.objectId isEqualToString:object.objectId];
