@@ -29,7 +29,6 @@
 		DB3E90611B884FEE005E9FA5 /* CatTodayTimelineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E90601B884FEE005E9FA5 /* CatTodayTimelineVC.m */; };
 		DB3E90641B88522A005E9FA5 /* CatCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E90631B88522A005E9FA5 /* CatCollectionViewCell.m */; };
 		DB3E90661B88559D005E9FA5 /* CatToday-Prefix.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E90651B88559D005E9FA5 /* CatToday-Prefix.m */; };
-		DB3E90681B8856CA005E9FA5 /* PrivateKey.h in Sources */ = {isa = PBXBuildFile; fileRef = DB3E90671B8856CA005E9FA5 /* PrivateKey.h */; };
 		DB3E906C1B88636E005E9FA5 /* UIColor+CatToday.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E906B1B88636E005E9FA5 /* UIColor+CatToday.m */; };
 		DB3E90701B887024005E9FA5 /* PFObject+CatToday.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E906F1B887024005E9FA5 /* PFObject+CatToday.m */; };
 		DB57581A1B8898BA006AD7FC /* TimeLineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5758191B8898BA006AD7FC /* TimeLineLayout.m */; };
@@ -460,7 +459,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB3E90681B8856CA005E9FA5 /* PrivateKey.h in Sources */,
 				C8CE43C61B883AA100FE88BD /* ViewController.m in Sources */,
 				C8CE43C31B883AA100FE88BD /* AppDelegate.m in Sources */,
 				DB3E90661B88559D005E9FA5 /* CatToday-Prefix.m in Sources */,

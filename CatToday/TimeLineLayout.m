@@ -8,7 +8,7 @@
 
 #import "TimeLineLayout.h"
 #import "WhiteDecorationCell.h"
-#define MainPage_Item_Spacing 0.0f
+#import "Constants.h"
 
 @interface TimeLineLayout ()
 @property (nonatomic, strong) NSDictionary *decorationRects;

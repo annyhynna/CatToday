@@ -14,5 +14,6 @@
 #define CAT_CLASS_KEY_PHOTO @"photo"
 
 #define DECORATION_MARGIN 6.0f
+#define MainPage_Item_Spacing 4.0f
 
 #endif
