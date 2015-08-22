@@ -16,6 +16,7 @@
 
 #define QUOTE_CLASS @"Quote"
 #define QUOTE_CLASS_KEY_NAME @"quote"
+#define QUOTE_CLASS_KEY_AUTHOR @"author"
 
 #define DECORATION_MARGIN 6.0f
 #define MainPage_Item_Spacing 4.0f
