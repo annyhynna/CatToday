@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "PrivateKey.h"
+#import "Constants.h"
 
 //pods
 #import <Parse/Parse.h>
@@ -59,6 +60,7 @@
 	NSLog(@"%s %@", __PRETTY_FUNCTION__, urlParameter);
 	if (urlParameter.length > 0) {
 		self.objectID = urlParameter;
+		[[NSNotificationCenter defaultCenter] postNotificationName:NSNotify_ObjectID object:nil];
 	}
 	return YES;
 }

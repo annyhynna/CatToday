@@ -23,4 +23,6 @@
 #define DECORATION_MARGIN 6.0f
 #define MainPage_Item_Spacing 4.0f
 
+#define NSNotify_ObjectID @"NSNotify_ObjectID"
+
 #endif

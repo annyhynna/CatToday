@@ -13,6 +13,7 @@
 #import "UIColor+CatToday.h"
 #import "Constants.h"
 #import "MenuImage.h"
+#import "AppDelegate.h"
 
 //pods
 #import <Parse/Parse.h>
@@ -42,6 +43,24 @@ static NSString *cellIdentifier = @"cellIdentifier";
 	[self networkStatusMonitoring];
 
 	//[self createNewCat];
+
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(jumpToPhoto)
+												 name:NSNotify_ObjectID
+											   object:nil];
+}
+
+- (void)dealloc
+{
+	[[NSNotificationCenter defaultCenter] removeObserver:self
+													name:NSNotify_ObjectID
+												  object:nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	[self jumpToPhoto];
 }
 
 - (void)uiSetting
@@ -150,11 +169,43 @@ static NSString *cellIdentifier = @"cellIdentifier";
 	return cell;
 }
 
+#pragma mark - jump to photo
+- (void)jumpToPhoto
+{
+	NSString *objectID = [self getAppDelegateObjectID];
+	if (objectID) {
+		NSIndexPath *indexPath = [self indexPathForObjectID:objectID];
+		if (indexPath) {
+			[self.collectionView scrollToItemAtIndexPath:indexPath
+										atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
+												animated:NO];
+		}
+	}
+}
+
+- (NSIndexPath *)indexPathForObjectID:(NSString *)objectID {
+	for (int i = 0; i < self.objects.count; i++) {
+		PFObject *object = [self.objects objectAtIndex:i];
+		if ([object.objectId isEqualToString:objectID]) {
+			return [NSIndexPath indexPathForRow:i inSection:0];
+		}
+	}
+
+	return nil;
+}
+
+- (NSString *)getAppDelegateObjectID
+{
+	return ((AppDelegate *)[[UIApplication sharedApplication] delegate]).objectID;
+}
+
 #pragma mark - PFQueryCollectionViewController
 
 - (void)objectsDidLoad:(NSError *)error {
 	//NSLog(@"%s %@ %@", __PRETTY_FUNCTION__, NSStringFromClass(self.class), self.objects);
 	[super objectsDidLoad:error];
+
+	[self jumpToPhoto];
 }
 
 - (PFQuery *)queryForCollection {

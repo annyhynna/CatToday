@@ -10,7 +10,6 @@
 		1D22D45A1A71CEDE8F9186B1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 245B308C2A35D98DCB42D3BA /* libPods.a */; };
 		C8CE43C01B883AA100FE88BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8CE43BF1B883AA100FE88BD /* main.m */; };
 		C8CE43C31B883AA100FE88BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8CE43C21B883AA100FE88BD /* AppDelegate.m */; };
-		C8CE43C61B883AA100FE88BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8CE43C51B883AA100FE88BD /* ViewController.m */; };
 		C8CE43C91B883AA100FE88BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8CE43C71B883AA100FE88BD /* Main.storyboard */; };
 		C8CE43CB1B883AA100FE88BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8CE43CA1B883AA100FE88BD /* Images.xcassets */; };
 		C8CE43CE1B883AA100FE88BD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8CE43CC1B883AA100FE88BD /* LaunchScreen.xib */; };
@@ -79,8 +78,6 @@
 		C8CE43BF1B883AA100FE88BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C8CE43C11B883AA100FE88BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C8CE43C21B883AA100FE88BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C8CE43C41B883AA100FE88BD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C8CE43C51B883AA100FE88BD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C8CE43C81B883AA100FE88BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C8CE43CA1B883AA100FE88BD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C8CE43CD1B883AA100FE88BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -177,13 +174,8 @@
 		C8CE43BC1B883AA100FE88BD /* CatToday */ = {
 			isa = PBXGroup;
 			children = (
-				DBA4005E1B88E38200DF5131 /* CatToday.entitlements */,
 				C8CE43C11B883AA100FE88BD /* AppDelegate.h */,
 				C8CE43C21B883AA100FE88BD /* AppDelegate.m */,
-				C8CE43C41B883AA100FE88BD /* ViewController.h */,
-				C8CE43C51B883AA100FE88BD /* ViewController.m */,
-				DB57581E1B88A11A006AD7FC /* WhiteNaviVC.h */,
-				DB57581F1B88A11A006AD7FC /* WhiteNaviVC.m */,
 				DB3E906D1B886373005E9FA5 /* Common */,
 				DB5758171B8898AD006AD7FC /* CollectionView */,
 				C8CE43C71B883AA100FE88BD /* Main.storyboard */,
@@ -197,6 +189,7 @@
 		C8CE43BD1B883AA100FE88BD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DBA4005E1B88E38200DF5131 /* CatToday.entitlements */,
 				DB3E90671B8856CA005E9FA5 /* PrivateKey.h */,
 				DB3E90691B885C15005E9FA5 /* Constants.h */,
 				DB3E90651B88559D005E9FA5 /* CatToday-Prefix.m */,
@@ -258,6 +251,8 @@
 		DB3E906D1B886373005E9FA5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				DB57581E1B88A11A006AD7FC /* WhiteNaviVC.h */,
+				DB57581F1B88A11A006AD7FC /* WhiteNaviVC.m */,
 				DB5758211B88B29C006AD7FC /* MenuImage.h */,
 				DB5758221B88B29C006AD7FC /* MenuImage.m */,
 				DB3E906A1B88636E005E9FA5 /* UIColor+CatToday.h */,
@@ -514,7 +509,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8CE43C61B883AA100FE88BD /* ViewController.m in Sources */,
 				C8CE43C31B883AA100FE88BD /* AppDelegate.m in Sources */,
 				DB3E90661B88559D005E9FA5 /* CatToday-Prefix.m in Sources */,
 				DB57581A1B8898BA006AD7FC /* TimeLineLayout.m in Sources */,
