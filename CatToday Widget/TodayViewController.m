@@ -55,6 +55,7 @@
 	[super viewWillAppear:animated];
 
 	PFQuery *query = [PFQuery queryWithClassName:CAT_CLASS];
+	query.cachePolicy = kPFCachePolicyNetworkElseCache;
 	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
 		if (!error && objects.count>0) {
 			PFObject *obj = objects[arc4random() % objects.count];
@@ -68,6 +69,7 @@
 	}];
 
 	PFQuery *queryQuote = [PFQuery queryWithClassName:QUOTE_CLASS];
+	queryQuote.cachePolicy = kPFCachePolicyNetworkElseCache;
 	[queryQuote findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
 		if (!error && objects.count>0) {
 			PFObject *obj = objects[arc4random() % objects.count];
