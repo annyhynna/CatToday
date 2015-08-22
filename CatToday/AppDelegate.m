@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "PrivateKey.h"
+#import "Constants.h"
 
 //pods
 #import <Parse/Parse.h>
@@ -50,6 +51,18 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - 
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+	NSString *urlParameter = [[url host] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	NSLog(@"%s %@", __PRETTY_FUNCTION__, urlParameter);
+	if (urlParameter.length > 0) {
+		self.objectID = urlParameter;
+		[[NSNotificationCenter defaultCenter] postNotificationName:NSNotify_ObjectID object:nil];
+	}
+	return YES;
 }
 
 @end

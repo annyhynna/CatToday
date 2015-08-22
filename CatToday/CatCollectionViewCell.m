@@ -11,6 +11,7 @@
 #import "Masonry.h"
 
 @implementation CatCollectionViewCell
+#define InfoSpacing 20.0
 
 - (instancetype)initWithFrame:(CGRect)frame {
 	self = [super initWithFrame:frame];
@@ -21,8 +22,8 @@
 		//
 		[self.contentView addSubview:self.nameLabel];
 		[self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+			make.top.equalTo(self.imageView.mas_bottom).offset(20);
 			make.centerX.equalTo(self.contentView.mas_centerX);
-			make.centerY.equalTo(self.contentView.mas_centerY);
 		}];
 
 		//
@@ -35,6 +36,15 @@
 			make.width.equalTo(self.contentView.mas_width).multipliedBy(0.5);
 			make.width.equalTo(self.imageView.mas_height);
 		}];
+
+		//
+		[self.contentView addSubview:self.infoTextView];
+		[self.infoTextView mas_makeConstraints:^(MASConstraintMaker *make) {
+			make.leading.equalTo(self.contentView.mas_leading).offset(InfoSpacing);
+			make.trailing.equalTo(self.contentView.mas_trailing).offset(-InfoSpacing);
+			make.bottom.equalTo(self.contentView.mas_bottom).offset(-3*InfoSpacing);
+			make.top.equalTo(self.nameLabel.mas_bottom).offset(InfoSpacing);
+		}];
 	}
 	return self;
 }
@@ -45,6 +55,19 @@
 		_nameLabel = [[UILabel alloc] init];
 	}
 	return _nameLabel;
+}
+
+- (UITextView *)infoTextView
+{
+	if (!_infoTextView) {
+		_infoTextView = [[UITextView alloc] init];
+		_infoTextView.backgroundColor = [UIColor clearColor];
+		_infoTextView.selectable = NO;
+		_infoTextView.editable = NO;
+		_infoTextView.font = [UIFont systemFontOfSize:16];
+		_infoTextView.textColor = [UIColor grayColor];
+	}
+	return _infoTextView;
 }
 
 @end
