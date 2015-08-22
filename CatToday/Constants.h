@@ -12,7 +12,7 @@
 #define CAT_CLASS @"Cat"
 #define CAT_CLASS_KEY_NAME @"name"
 #define CAT_CLASS_KEY_PHOTO @"photo"
-#define CAT_CLASS_KEY_QUOTE @"photo"
+#define CAT_CLASS_KEY_INFO @"info"
 
 #define QUOTE_CLASS @"Quote"
 #define QUOTE_CLASS_KEY_NAME @"quote"

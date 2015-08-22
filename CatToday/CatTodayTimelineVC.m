@@ -143,6 +143,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
 	CatCollectionViewCell *cell = (CatCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
 	cell.imageView.image = nil;
 	cell.nameLabel.text = [object getName];
+	cell.infoTextView.text = [object getInfo];
 
 	if (object && [object objectForKey:CAT_CLASS_KEY_PHOTO]) {
 		cell.imageView.file = [object objectForKey:CAT_CLASS_KEY_PHOTO];
@@ -218,17 +219,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
 
 	PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
 	[query orderByDescending:@"createdAt"];
-
-	// A pull-to-refresh should always trigger a network request.
-//	[query setCachePolicy:kPFCachePolicyNetworkOnly];
-
-	// If no objects are loaded in memory, we look to the cache first to fill the table
-	// and then subsequently do a query against the network.
-	//
-	// If there is no network connection, we will hit the cache first.
-//	if (self.objects.count == 0) {
-		[query setCachePolicy:kPFCachePolicyCacheThenNetwork];
-//	}
+	[query setCachePolicy:kPFCachePolicyCacheThenNetwork];
 
 	return query;
 }

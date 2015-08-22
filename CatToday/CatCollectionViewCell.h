@@ -11,4 +11,5 @@
 
 @interface CatCollectionViewCell : PFCollectionViewCell
 @property (nonatomic, strong) UILabel *nameLabel;
+@property (nonatomic, strong) UITextView *infoTextView;
 @end
