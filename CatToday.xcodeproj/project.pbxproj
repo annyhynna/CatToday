@@ -34,6 +34,7 @@
 		DB3E90701B887024005E9FA5 /* PFObject+CatToday.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E906F1B887024005E9FA5 /* PFObject+CatToday.m */; };
 		DB57581A1B8898BA006AD7FC /* TimeLineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5758191B8898BA006AD7FC /* TimeLineLayout.m */; };
 		DB57581D1B889906006AD7FC /* WhiteDecorationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB57581C1B889906006AD7FC /* WhiteDecorationCell.m */; };
+		DB5758201B88A11A006AD7FC /* WhiteNaviVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB57581F1B88A11A006AD7FC /* WhiteNaviVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,8 @@
 		DB5758191B8898BA006AD7FC /* TimeLineLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeLineLayout.m; sourceTree = "<group>"; };
 		DB57581B1B889906006AD7FC /* WhiteDecorationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhiteDecorationCell.h; sourceTree = "<group>"; };
 		DB57581C1B889906006AD7FC /* WhiteDecorationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhiteDecorationCell.m; sourceTree = "<group>"; };
+		DB57581E1B88A11A006AD7FC /* WhiteNaviVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhiteNaviVC.h; sourceTree = "<group>"; };
+		DB57581F1B88A11A006AD7FC /* WhiteNaviVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhiteNaviVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +175,8 @@
 				C8CE43C21B883AA100FE88BD /* AppDelegate.m */,
 				C8CE43C41B883AA100FE88BD /* ViewController.h */,
 				C8CE43C51B883AA100FE88BD /* ViewController.m */,
+				DB57581E1B88A11A006AD7FC /* WhiteNaviVC.h */,
+				DB57581F1B88A11A006AD7FC /* WhiteNaviVC.m */,
 				DB3E906D1B886373005E9FA5 /* Common */,
 				DB5758171B8898AD006AD7FC /* CollectionView */,
 				C8CE43C71B883AA100FE88BD /* Main.storyboard */,
@@ -466,6 +471,7 @@
 				DB3E906C1B88636E005E9FA5 /* UIColor+CatToday.m in Sources */,
 				DB57581D1B889906006AD7FC /* WhiteDecorationCell.m in Sources */,
 				DB3E90641B88522A005E9FA5 /* CatCollectionViewCell.m in Sources */,
+				DB5758201B88A11A006AD7FC /* WhiteNaviVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
