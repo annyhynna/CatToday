@@ -8,8 +8,13 @@
 
 #import "TodayViewController.h"
 #import <NotificationCenter/NotificationCenter.h>
+#import "PrivateKey.h"
+#import "Constants.h"
+
+#import <Parse/Parse.h>
 
 @interface TodayViewController () <NCWidgetProviding>
+@property (weak, nonatomic) IBOutlet UILabel *quoteLabel;
 
 @end
 
@@ -20,6 +25,20 @@
     
     self.preferredContentSize = CGSizeMake(0, 100);
     // Do any additional setup after loading the view from its nib.
+
+	[Parse setApplicationId:appID
+				  clientKey:clKey];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+
+	self.quoteLabel.text = @"456";
+
+	//PFQuery *query = [PFQuery queryWithClassName:CAT_CLASS];
+	//query.limit = 1;
+	//query findObjectsInBackground
 }
 
 - (void)didReceiveMemoryWarning {
