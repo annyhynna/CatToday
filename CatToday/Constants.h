@@ -16,6 +16,7 @@
 
 #define QUOTE_CLASS @"Quote"
 #define QUOTE_CLASS_KEY_NAME @"quote"
+#define QUOTE_CLASS_KEY_AUTHOR @"author"
 
 #define URL_SCHEMES @"CatToday://"
 
