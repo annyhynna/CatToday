@@ -9,5 +9,5 @@
 #import "PFQueryCollectionViewController.h"
 
 @interface CatTodayTimelineVC : PFQueryCollectionViewController
-
+- (void)reloadCellOfObject:(PFObject *)object;
 @end

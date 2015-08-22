@@ -12,15 +12,18 @@
 #import "PFObject+CatToday.h"
 #import "UIColor+CatToday.h"
 #import "Constants.h"
+#import "MenuImage.h"
 
 //pods
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
+#import "AFNetworking.h"
+#import "Masonry.h"
 
 static NSString *cellIdentifier = @"cellIdentifier";
 
 @interface CatTodayTimelineVC ()
-
+@property (nonatomic, strong) UILabel *networkView;
 @end
 
 @implementation CatTodayTimelineVC
@@ -33,6 +36,11 @@ static NSString *cellIdentifier = @"cellIdentifier";
 			forCellWithReuseIdentifier:cellIdentifier];
 
 	[self uiSetting];
+
+	// network status
+	[self createNetworkStatusFrame];
+	[self networkStatusMonitoring];
+
 	//[self createNewCat];
 }
 
@@ -84,6 +92,31 @@ static NSString *cellIdentifier = @"cellIdentifier";
 	return MainPage_Item_Spacing;
 }
 
+- (void)reloadCellOfObject:(PFObject *)object
+{
+	NSIndexPath *indexPath = [self indexPathForObject:object];
+	//NSLog(@"%s %ld", __PRETTY_FUNCTION__, indexPath.item);
+	if (indexPath) {
+		[self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
+	}
+	else {
+#if DEBUG
+		NSLog(@"indexPath not found at %s %@", __PRETTY_FUNCTION__, object.objectId);
+#endif
+	}
+}
+
+- (NSIndexPath *)indexPathForObject:(PFObject *)targetObject {
+	for (int i = 0; i < self.objects.count; i++) {
+		PFObject *object = [self.objects objectAtIndex:i];
+		if ([object isEqualToObject:targetObject]) {
+			return [NSIndexPath indexPathForRow:i inSection:0];
+		}
+	}
+
+	return nil;
+}
+
 - (PFCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
 	// NSUInteger index = indexPath.item;
 	//	NSLog(@"%s %lu %ld", __PRETTY_FUNCTION__, (unsigned long)index, (long)indexPath.row);
@@ -100,14 +133,17 @@ static NSString *cellIdentifier = @"cellIdentifier";
 			[cell.imageView loadInBackground];
 		}
 		else {
-			[cell.imageView loadInBackground:^(UIImage *image, NSError *error) {
-				if (!error) {
-					NSLog(@"load file ok: %ld", indexPath.item);
-				}
-				else {
-					NSLog(@"load file fail: %ld %@", indexPath.item, error);
-				}
-			}];
+//			[cell.imageView loadInBackground:^(UIImage *image, NSError *error) {
+//				if (!error) {
+//					NSLog(@"load file ok: %ld", indexPath.item);
+//				}
+//				else {
+//					NSLog(@"load file fail: %ld %@", indexPath.item, error);
+//				}
+//			}];
+			[[MenuImage sharedManager] loadHelperCellOfObject:object
+											   needLoadInView:YES
+											   viewController:self];
 		}
 	}
 
@@ -133,19 +169,72 @@ static NSString *cellIdentifier = @"cellIdentifier";
 	[query orderByDescending:@"createdAt"];
 
 	// A pull-to-refresh should always trigger a network request.
-	[query setCachePolicy:kPFCachePolicyNetworkOnly];
+//	[query setCachePolicy:kPFCachePolicyNetworkOnly];
 
 	// If no objects are loaded in memory, we look to the cache first to fill the table
 	// and then subsequently do a query against the network.
 	//
 	// If there is no network connection, we will hit the cache first.
-	if (self.objects.count == 0) {
+//	if (self.objects.count == 0) {
 		[query setCachePolicy:kPFCachePolicyCacheThenNetwork];
-	}
+//	}
 
 	return query;
 }
 
+#pragma mark - 
+#pragma mark - Network
+- (void)createNetworkStatusFrame
+{
+	[self.view addSubview:self.networkView];
+	[self.networkView mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.bottom.equalTo(self.view.mas_bottom);
+		make.left.equalTo(@0);
+		make.right.equalTo(@0);
+		make.height.equalTo(@30);
+	}];
+
+}
+
+- (UILabel *)networkView
+{
+	if (!_networkView) {
+		_networkView = [[UILabel alloc] init];
+		_networkView.text = @"No Internet";
+		_networkView.textColor = [UIColor whiteColor];
+		_networkView.textAlignment = NSTextAlignmentCenter;
+		_networkView.backgroundColor = [UIColor blackColor];
+		_networkView.hidden = YES;
+		_networkView.alpha = 0.5;
+	}
+	return _networkView;
+}
+
+- (void)networkStatusMonitoring
+{
+	// -- Start monitoring network reachability (globally available) -- //
+	[[AFNetworkReachabilityManager sharedManager] startMonitoring];
+
+	[[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+		NSLog(@"Reachability changed: %s %@ %@", __PRETTY_FUNCTION__, NSStringFromClass(self.class), AFStringFromNetworkReachabilityStatus(status));
+
+		switch (status) {
+			case AFNetworkReachabilityStatusReachableViaWWAN:
+			case AFNetworkReachabilityStatusReachableViaWiFi:
+				// -- Reachable -- //
+				NSLog(@"Reachable");
+				self.networkView.hidden = YES;
+				break;
+			case AFNetworkReachabilityStatusNotReachable:
+			default:
+				// -- Not reachable -- //
+				NSLog(@"Not Reachable");
+				self.networkView.hidden = NO;
+				break;
+		}
+
+	}];
+}
 
 
 @end

@@ -17,4 +17,8 @@
 	}
 	return @"";
 }
+- (BOOL)isEqualToObject:(PFObject *)object
+{
+	return [self.objectId isEqualToString:object.objectId];
+}
 @end

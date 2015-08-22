@@ -34,6 +34,7 @@
 		DB57581A1B8898BA006AD7FC /* TimeLineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5758191B8898BA006AD7FC /* TimeLineLayout.m */; };
 		DB57581D1B889906006AD7FC /* WhiteDecorationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB57581C1B889906006AD7FC /* WhiteDecorationCell.m */; };
 		DB5758201B88A11A006AD7FC /* WhiteNaviVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB57581F1B88A11A006AD7FC /* WhiteNaviVC.m */; };
+		DB5758231B88B29C006AD7FC /* MenuImage.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5758221B88B29C006AD7FC /* MenuImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,8 @@
 		DB57581C1B889906006AD7FC /* WhiteDecorationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhiteDecorationCell.m; sourceTree = "<group>"; };
 		DB57581E1B88A11A006AD7FC /* WhiteNaviVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhiteNaviVC.h; sourceTree = "<group>"; };
 		DB57581F1B88A11A006AD7FC /* WhiteNaviVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhiteNaviVC.m; sourceTree = "<group>"; };
+		DB5758211B88B29C006AD7FC /* MenuImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuImage.h; sourceTree = "<group>"; };
+		DB5758221B88B29C006AD7FC /* MenuImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuImage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +252,8 @@
 		DB3E906D1B886373005E9FA5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				DB5758211B88B29C006AD7FC /* MenuImage.h */,
+				DB5758221B88B29C006AD7FC /* MenuImage.m */,
 				DB3E906A1B88636E005E9FA5 /* UIColor+CatToday.h */,
 				DB3E906B1B88636E005E9FA5 /* UIColor+CatToday.m */,
 				DB3E906E1B887024005E9FA5 /* PFObject+CatToday.h */,
@@ -469,6 +474,7 @@
 				DB3E906C1B88636E005E9FA5 /* UIColor+CatToday.m in Sources */,
 				DB57581D1B889906006AD7FC /* WhiteDecorationCell.m in Sources */,
 				DB3E90641B88522A005E9FA5 /* CatCollectionViewCell.m in Sources */,
+				DB5758231B88B29C006AD7FC /* MenuImage.m in Sources */,
 				DB5758201B88A11A006AD7FC /* WhiteNaviVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
