@@ -17,6 +17,8 @@
 #define QUOTE_CLASS @"Quote"
 #define QUOTE_CLASS_KEY_NAME @"quote"
 
+#define URL_SCHEMES @"CatToday://"
+
 #define DECORATION_MARGIN 6.0f
 #define MainPage_Item_Spacing 4.0f
 
