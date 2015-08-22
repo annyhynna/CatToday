@@ -73,8 +73,10 @@
 	[queryQuote findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
 		if (!error && objects.count>0) {
 			PFObject *obj = objects[arc4random() % objects.count];
-            self.quoteTextView.text = obj[QUOTE_CLASS_KEY_NAME];
-            self.authorLabel.text = obj[QUOTE_CLASS_KEY_AUTHOR];
+			dispatch_async(dispatch_get_main_queue(), ^{
+				self.quoteTextView.text = obj[QUOTE_CLASS_KEY_NAME];
+				self.authorLabel.text = obj[QUOTE_CLASS_KEY_AUTHOR];
+			});
 		}
 		else {
 			NSLog(@"%s %@ quote error", __PRETTY_FUNCTION__, NSStringFromClass(self.class));
