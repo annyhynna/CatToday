@@ -19,6 +19,8 @@
 		DB3E90641B88522A005E9FA5 /* CatCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E90631B88522A005E9FA5 /* CatCollectionViewCell.m */; };
 		DB3E90661B88559D005E9FA5 /* CatToday-Prefix.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E90651B88559D005E9FA5 /* CatToday-Prefix.m */; };
 		DB3E90681B8856CA005E9FA5 /* PrivateKey.h in Sources */ = {isa = PBXBuildFile; fileRef = DB3E90671B8856CA005E9FA5 /* PrivateKey.h */; };
+		DB3E906C1B88636E005E9FA5 /* UIColor+CatToday.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E906B1B88636E005E9FA5 /* UIColor+CatToday.m */; };
+		DB3E90701B887024005E9FA5 /* PFObject+CatToday.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E906F1B887024005E9FA5 /* PFObject+CatToday.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,11 @@
 		DB3E90631B88522A005E9FA5 /* CatCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatCollectionViewCell.m; sourceTree = "<group>"; };
 		DB3E90651B88559D005E9FA5 /* CatToday-Prefix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CatToday-Prefix.m"; sourceTree = "<group>"; };
 		DB3E90671B8856CA005E9FA5 /* PrivateKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivateKey.h; sourceTree = "<group>"; };
+		DB3E90691B885C15005E9FA5 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		DB3E906A1B88636E005E9FA5 /* UIColor+CatToday.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CatToday.h"; sourceTree = "<group>"; };
+		DB3E906B1B88636E005E9FA5 /* UIColor+CatToday.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CatToday.m"; sourceTree = "<group>"; };
+		DB3E906E1B887024005E9FA5 /* PFObject+CatToday.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PFObject+CatToday.h"; sourceTree = "<group>"; };
+		DB3E906F1B887024005E9FA5 /* PFObject+CatToday.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PFObject+CatToday.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +109,7 @@
 				C8CE43C21B883AA100FE88BD /* AppDelegate.m */,
 				C8CE43C41B883AA100FE88BD /* ViewController.h */,
 				C8CE43C51B883AA100FE88BD /* ViewController.m */,
+				DB3E906D1B886373005E9FA5 /* Common */,
 				DB3E905F1B884FEE005E9FA5 /* CatTodayTimelineVC.h */,
 				DB3E90601B884FEE005E9FA5 /* CatTodayTimelineVC.m */,
 				DB3E90621B88522A005E9FA5 /* CatCollectionViewCell.h */,
@@ -118,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				DB3E90671B8856CA005E9FA5 /* PrivateKey.h */,
+				DB3E90691B885C15005E9FA5 /* Constants.h */,
 				DB3E90651B88559D005E9FA5 /* CatToday-Prefix.m */,
 				C8CE43BE1B883AA100FE88BD /* Info.plist */,
 				C8CE43BF1B883AA100FE88BD /* main.m */,
@@ -140,6 +149,17 @@
 				C8CE43D81B883AA100FE88BD /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DB3E906D1B886373005E9FA5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DB3E906A1B88636E005E9FA5 /* UIColor+CatToday.h */,
+				DB3E906B1B88636E005E9FA5 /* UIColor+CatToday.m */,
+				DB3E906E1B887024005E9FA5 /* PFObject+CatToday.h */,
+				DB3E906F1B887024005E9FA5 /* PFObject+CatToday.m */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 		E782FF2DDDF7C2995F3432BA /* Pods */ = {
@@ -300,6 +320,8 @@
 				DB3E90661B88559D005E9FA5 /* CatToday-Prefix.m in Sources */,
 				DB3E90611B884FEE005E9FA5 /* CatTodayTimelineVC.m in Sources */,
 				C8CE43C01B883AA100FE88BD /* main.m in Sources */,
+				DB3E90701B887024005E9FA5 /* PFObject+CatToday.m in Sources */,
+				DB3E906C1B88636E005E9FA5 /* UIColor+CatToday.m in Sources */,
 				DB3E90641B88522A005E9FA5 /* CatCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

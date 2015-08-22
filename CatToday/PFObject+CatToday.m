@@ -7,7 +7,14 @@
 //
 
 #import "PFObject+CatToday.h"
+#import "Constants.h"
 
 @implementation PFObject (CatToday)
-
+- (NSString *)getName
+{
+	if (self[CAT_CLASS_KEY_NAME]) {
+		return self[CAT_CLASS_KEY_NAME];
+	}
+	return @"";
+}
 @end

@@ -9,5 +9,5 @@
 #import "PFObject.h"
 
 @interface PFObject (CatToday)
-
+- (NSString *)getName;
 @end

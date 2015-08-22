@@ -11,4 +11,5 @@
 #ifdef __OBJC__
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
+#import "UIColor+CatToday.h"
 #endif
