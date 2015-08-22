@@ -23,7 +23,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb_IMG_5553_1024.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Fly-DQ-YLH">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumb_IMG_5553_1024.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Fly-DQ-YLH" customClass="PFImageView">
                                 <rect key="frame" x="6" y="5" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="KQb-rG-fxZ"/>
@@ -45,6 +45,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="100"/>
                     <connections>
+                        <outlet property="imageView" destination="Fly-DQ-YLH" id="qAx-xi-UJf"/>
                         <outlet property="quoteLabel" destination="aqU-sw-R4q" id="won-Lj-nXg"/>
                     </connections>
                 </viewController>

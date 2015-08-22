@@ -13,9 +13,11 @@
 #import "PFObject+CatToday.h"
 
 #import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 
 @interface TodayViewController () <NCWidgetProviding>
 @property (weak, nonatomic) IBOutlet UILabel *quoteLabel;
+@property (weak, nonatomic) IBOutlet PFImageView *imageView;
 
 @end
 
@@ -30,24 +32,33 @@
 	[Parse setApplicationId:appID
 				  clientKey:clKey];
 
-	self.quoteLabel.text = @"didLoad";
+	NSLog(@"%s %@", __PRETTY_FUNCTION__, NSStringFromClass(self.class));
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
 
-	self.quoteLabel.text = @"456";
-
 	PFQuery *query = [PFQuery queryWithClassName:CAT_CLASS];
-	query.limit = 1;
 	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
 		if (!error && objects.count>0) {
-			PFObject *obj = objects[0];
-			self.quoteLabel.text = [obj getName];
+			PFObject *obj = objects[arc4random() % objects.count];
+			self.imageView.file = obj[CAT_CLASS_KEY_PHOTO];
+			[self.imageView loadInBackground];
 		}
 		else {
-			self.quoteLabel.text = @"error";
+			NSLog(@"%s %@ cat error", __PRETTY_FUNCTION__, NSStringFromClass(self.class));
+		}
+	}];
+
+	PFQuery *queryQuote = [PFQuery queryWithClassName:QUOTE_CLASS];
+	[queryQuote findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+		if (!error && objects.count>0) {
+			PFObject *obj = objects[arc4random() % objects.count];
+			self.quoteLabel.text = obj[QUOTE_CLASS_KEY_NAME];
+		}
+		else {
+			NSLog(@"%s %@ quote error", __PRETTY_FUNCTION__, NSStringFromClass(self.class));
 		}
 	}];
 }
