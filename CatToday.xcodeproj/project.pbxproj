@@ -237,7 +237,7 @@
 				C8CE44241B8855F600FE88BD /* Info.plist */,
 			);
 			name = "Supporting Files";
-		}
+		};
 		DB3E906D1B886373005E9FA5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
