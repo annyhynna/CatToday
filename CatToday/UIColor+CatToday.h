@@ -16,6 +16,8 @@
 
 + (UIColor *)mainPageBackground;
 + (UIColor *)mainPageDecorationBackground;
++ (UIColor *)navBar;
++ (UIColor *)statusBarColor;
 
 //
 + (UIColor *)colorWithHex:(int)hex;
