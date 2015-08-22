@@ -10,6 +10,7 @@
 #import <NotificationCenter/NotificationCenter.h>
 #import "PrivateKey.h"
 #import "Constants.h"
+#import "PFObject+CatToday.h"
 
 #import <Parse/Parse.h>
 
@@ -28,6 +29,8 @@
 
 	[Parse setApplicationId:appID
 				  clientKey:clKey];
+
+	self.quoteLabel.text = @"didLoad";
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -36,9 +39,17 @@
 
 	self.quoteLabel.text = @"456";
 
-	//PFQuery *query = [PFQuery queryWithClassName:CAT_CLASS];
-	//query.limit = 1;
-	//query findObjectsInBackground
+	PFQuery *query = [PFQuery queryWithClassName:CAT_CLASS];
+	query.limit = 1;
+	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+		if (!error && objects.count>0) {
+			PFObject *obj = objects[0];
+			self.quoteLabel.text = [obj getName];
+		}
+		else {
+			self.quoteLabel.text = @"error";
+		}
+	}];
 }
 
 - (void)didReceiveMemoryWarning {

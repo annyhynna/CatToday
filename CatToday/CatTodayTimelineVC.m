@@ -153,7 +153,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
 #pragma mark - PFQueryCollectionViewController
 
 - (void)objectsDidLoad:(NSError *)error {
-	NSLog(@"%s %@ %@", __PRETTY_FUNCTION__, NSStringFromClass(self.class), self.objects);
+	//NSLog(@"%s %@ %@", __PRETTY_FUNCTION__, NSStringFromClass(self.class), self.objects);
 	[super objectsDidLoad:error];
 }
 
