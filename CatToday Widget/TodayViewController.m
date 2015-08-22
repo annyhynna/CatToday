@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *quoteLabel;
 @property (weak, nonatomic) IBOutlet PFImageView *imageView;
 @property (strong, nonatomic) UIButton *backgroundBtn;
+@property (strong, nonatomic) PFObject *object;
 @end
 
 @implementation TodayViewController
@@ -56,6 +57,7 @@
 	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
 		if (!error && objects.count>0) {
 			PFObject *obj = objects[arc4random() % objects.count];
+			self.object = obj;
 			self.imageView.file = obj[CAT_CLASS_KEY_PHOTO];
 			[self.imageView loadInBackground];
 		}
@@ -80,7 +82,7 @@
 {
 	NSLog(@"%s %@", __PRETTY_FUNCTION__, NSStringFromClass(self.class));
 
-	NSURL *url = [NSURL URLWithString:URL_SCHEMES];
+	NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", URL_SCHEMES, self.object.objectId]];
 	[self.extensionContext openURL:url completionHandler:nil];
 }
 
