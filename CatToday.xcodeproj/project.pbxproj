@@ -17,6 +17,8 @@
 		D8DEB5DD946BC5FB5D76F4CB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34407B8E900D13FB247E9CEF /* libPods.a */; };
 		DB3E90611B884FEE005E9FA5 /* CatTodayTimelineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E90601B884FEE005E9FA5 /* CatTodayTimelineVC.m */; };
 		DB3E90641B88522A005E9FA5 /* CatCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E90631B88522A005E9FA5 /* CatCollectionViewCell.m */; };
+		DB3E90661B88559D005E9FA5 /* CatToday-Prefix.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E90651B88559D005E9FA5 /* CatToday-Prefix.m */; };
+		DB3E90681B8856CA005E9FA5 /* PrivateKey.h in Sources */ = {isa = PBXBuildFile; fileRef = DB3E90671B8856CA005E9FA5 /* PrivateKey.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		DB3E90601B884FEE005E9FA5 /* CatTodayTimelineVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatTodayTimelineVC.m; sourceTree = "<group>"; };
 		DB3E90621B88522A005E9FA5 /* CatCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatCollectionViewCell.h; sourceTree = "<group>"; };
 		DB3E90631B88522A005E9FA5 /* CatCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatCollectionViewCell.m; sourceTree = "<group>"; };
+		DB3E90651B88559D005E9FA5 /* CatToday-Prefix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CatToday-Prefix.m"; sourceTree = "<group>"; };
+		DB3E90671B8856CA005E9FA5 /* PrivateKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivateKey.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,8 @@
 		C8CE43BD1B883AA100FE88BD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DB3E90671B8856CA005E9FA5 /* PrivateKey.h */,
+				DB3E90651B88559D005E9FA5 /* CatToday-Prefix.m */,
 				C8CE43BE1B883AA100FE88BD /* Info.plist */,
 				C8CE43BF1B883AA100FE88BD /* main.m */,
 			);
@@ -288,8 +294,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB3E90681B8856CA005E9FA5 /* PrivateKey.h in Sources */,
 				C8CE43C61B883AA100FE88BD /* ViewController.m in Sources */,
 				C8CE43C31B883AA100FE88BD /* AppDelegate.m in Sources */,
+				DB3E90661B88559D005E9FA5 /* CatToday-Prefix.m in Sources */,
 				DB3E90611B884FEE005E9FA5 /* CatTodayTimelineVC.m in Sources */,
 				C8CE43C01B883AA100FE88BD /* main.m in Sources */,
 				DB3E90641B88522A005E9FA5 /* CatCollectionViewCell.m in Sources */,

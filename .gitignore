@@ -52,3 +52,4 @@ Carthage/Build
 ### Objective-C Patch ###
 *.xcscmblueprint
 
+*/PrivateKey.h
