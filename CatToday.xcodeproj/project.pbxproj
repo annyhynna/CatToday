@@ -14,6 +14,9 @@
 		C8CE43CB1B883AA100FE88BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8CE43CA1B883AA100FE88BD /* Images.xcassets */; };
 		C8CE43CE1B883AA100FE88BD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8CE43CC1B883AA100FE88BD /* LaunchScreen.xib */; };
 		C8CE43DA1B883AA100FE88BD /* CatTodayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8CE43D91B883AA100FE88BD /* CatTodayTests.m */; };
+		D8DEB5DD946BC5FB5D76F4CB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34407B8E900D13FB247E9CEF /* libPods.a */; };
+		DB3E90611B884FEE005E9FA5 /* CatTodayTimelineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E90601B884FEE005E9FA5 /* CatTodayTimelineVC.m */; };
+		DB3E90641B88522A005E9FA5 /* CatCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3E90631B88522A005E9FA5 /* CatCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F52DC468E87CA4E7775624A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		34407B8E900D13FB247E9CEF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC62129101A35A15FFDCBFC7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C8CE43BA1B883AA100FE88BD /* CatToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8CE43BE1B883AA100FE88BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8CE43BF1B883AA100FE88BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +46,10 @@
 		C8CE43D31B883AA100FE88BD /* CatTodayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatTodayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8CE43D81B883AA100FE88BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8CE43D91B883AA100FE88BD /* CatTodayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatTodayTests.m; sourceTree = "<group>"; };
+		DB3E905F1B884FEE005E9FA5 /* CatTodayTimelineVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatTodayTimelineVC.h; sourceTree = "<group>"; };
+		DB3E90601B884FEE005E9FA5 /* CatTodayTimelineVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatTodayTimelineVC.m; sourceTree = "<group>"; };
+		DB3E90621B88522A005E9FA5 /* CatCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatCollectionViewCell.h; sourceTree = "<group>"; };
+		DB3E90631B88522A005E9FA5 /* CatCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8DEB5DD946BC5FB5D76F4CB /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +77,8 @@
 				C8CE43BC1B883AA100FE88BD /* CatToday */,
 				C8CE43D61B883AA100FE88BD /* CatTodayTests */,
 				C8CE43BB1B883AA100FE88BD /* Products */,
+				E782FF2DDDF7C2995F3432BA /* Pods */,
+				F42844B0507E400D01B75F04 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +98,10 @@
 				C8CE43C21B883AA100FE88BD /* AppDelegate.m */,
 				C8CE43C41B883AA100FE88BD /* ViewController.h */,
 				C8CE43C51B883AA100FE88BD /* ViewController.m */,
+				DB3E905F1B884FEE005E9FA5 /* CatTodayTimelineVC.h */,
+				DB3E90601B884FEE005E9FA5 /* CatTodayTimelineVC.m */,
+				DB3E90621B88522A005E9FA5 /* CatCollectionViewCell.h */,
+				DB3E90631B88522A005E9FA5 /* CatCollectionViewCell.m */,
 				C8CE43C71B883AA100FE88BD /* Main.storyboard */,
 				C8CE43CA1B883AA100FE88BD /* Images.xcassets */,
 				C8CE43CC1B883AA100FE88BD /* LaunchScreen.xib */,
@@ -119,6 +136,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E782FF2DDDF7C2995F3432BA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC62129101A35A15FFDCBFC7 /* Pods.debug.xcconfig */,
+				1F52DC468E87CA4E7775624A /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F42844B0507E400D01B75F04 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34407B8E900D13FB247E9CEF /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +160,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8CE43DD1B883AA100FE88BD /* Build configuration list for PBXNativeTarget "CatToday" */;
 			buildPhases = (
+				02914FF1C87188FBF110DFB3 /* Check Pods Manifest.lock */,
 				C8CE43B61B883AA100FE88BD /* Sources */,
 				C8CE43B71B883AA100FE88BD /* Frameworks */,
 				C8CE43B81B883AA100FE88BD /* Resources */,
+				12DD17E83E3F5CB851AFBE8E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,6 +250,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		02914FF1C87188FBF110DFB3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		12DD17E83E3F5CB851AFBE8E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C8CE43B61B883AA100FE88BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -221,7 +290,9 @@
 			files = (
 				C8CE43C61B883AA100FE88BD /* ViewController.m in Sources */,
 				C8CE43C31B883AA100FE88BD /* AppDelegate.m in Sources */,
+				DB3E90611B884FEE005E9FA5 /* CatTodayTimelineVC.m in Sources */,
 				C8CE43C01B883AA100FE88BD /* main.m in Sources */,
+				DB3E90641B88522A005E9FA5 /* CatCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +416,7 @@
 		};
 		C8CE43DE1B883AA100FE88BD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC62129101A35A15FFDCBFC7 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CatToday/Info.plist;
@@ -355,6 +427,7 @@
 		};
 		C8CE43DF1B883AA100FE88BD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F52DC468E87CA4E7775624A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CatToday/Info.plist;
@@ -416,6 +489,7 @@
 				C8CE43DF1B883AA100FE88BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C8CE43E01B883AA100FE88BD /* Build configuration list for PBXNativeTarget "CatTodayTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +498,7 @@
 				C8CE43E21B883AA100FE88BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
