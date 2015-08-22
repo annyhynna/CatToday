@@ -12,6 +12,10 @@
 #define CAT_CLASS @"Cat"
 #define CAT_CLASS_KEY_NAME @"name"
 #define CAT_CLASS_KEY_PHOTO @"photo"
+#define CAT_CLASS_KEY_QUOTE @"photo"
+
+#define QUOTE_CLASS @"Quote"
+#define QUOTE_CLASS_KEY_NAME @"quote"
 
 #define DECORATION_MARGIN 6.0f
 #define MainPage_Item_Spacing 4.0f
