@@ -11,6 +11,7 @@
 #import "Constants.h"
 #import "PFObject+CatToday.h"
 #import "UIColor+CatToday.h"
+#import "Constants.h"
 
 //pods
 #import <Parse/Parse.h>
@@ -76,6 +77,11 @@ static NSString *cellIdentifier = @"cellIdentifier";
 {
 	CGSize size = CGSizeMake(self.collectionView.bounds.size.width, self.collectionView.bounds.size.height);
 	return size;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+	return MainPage_Item_Spacing;
 }
 
 - (PFCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
