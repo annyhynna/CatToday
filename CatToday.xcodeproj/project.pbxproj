@@ -14,6 +14,17 @@
 		C8CE43CB1B883AA100FE88BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8CE43CA1B883AA100FE88BD /* Images.xcassets */; };
 		C8CE43CE1B883AA100FE88BD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8CE43CC1B883AA100FE88BD /* LaunchScreen.xib */; };
 		C8CE43DA1B883AA100FE88BD /* CatTodayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8CE43D91B883AA100FE88BD /* CatTodayTests.m */; };
+		C8CE43FB1B88504D00FE88BD /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8CE43FA1B88504D00FE88BD /* CoreData.framework */; };
+		C8CE43FD1B88520600FE88BD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8CE43FC1B88520600FE88BD /* CoreMedia.framework */; };
+		C8CE44211B8855F600FE88BD /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8CE43E91B8847A300FE88BD /* NotificationCenter.framework */; };
+		C8CE442C1B8855F600FE88BD /* CatToday Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C8CE44201B8855F600FE88BD /* CatToday Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C8CE44331B88572200FE88BD /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8CE44321B88572200FE88BD /* MainInterface.storyboard */; };
+		C8CE44341B88578600FE88BD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8CE43FC1B88520600FE88BD /* CoreMedia.framework */; };
+		C8CE44351B88578600FE88BD /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8CE43FA1B88504D00FE88BD /* CoreData.framework */; };
+		C8CE44371B8857F600FE88BD /* thumb_IMG_5553_1024.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C8CE44361B8857F600FE88BD /* thumb_IMG_5553_1024.jpg */; };
+		C8CE44841B885A9300FE88BD /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8CE44831B885A9300FE88BD /* TodayViewController.m */; };
+		C8CE44851B88623700FE88BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8CE43CA1B883AA100FE88BD /* Images.xcassets */; };
+		C8CE44871B887D5700FE88BD /* cat_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = C8CE44861B887D5700FE88BD /* cat_1024.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,7 +35,28 @@
 			remoteGlobalIDString = C8CE43B91B883AA100FE88BD;
 			remoteInfo = CatToday;
 		};
+		C8CE442A1B8855F600FE88BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C8CE43B21B883AA000FE88BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C8CE441F1B8855F600FE88BD;
+			remoteInfo = "CatToday Widget";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C8CE43F91B8847A300FE88BD /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C8CE442C1B8855F600FE88BD /* CatToday Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C8CE43BA1B883AA100FE88BD /* CatToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +72,16 @@
 		C8CE43D31B883AA100FE88BD /* CatTodayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatTodayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8CE43D81B883AA100FE88BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8CE43D91B883AA100FE88BD /* CatTodayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CatTodayTests.m; sourceTree = "<group>"; };
+		C8CE43E91B8847A300FE88BD /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		C8CE43FA1B88504D00FE88BD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C8CE43FC1B88520600FE88BD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		C8CE44201B8855F600FE88BD /* CatToday Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "CatToday Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8CE44241B8855F600FE88BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8CE44321B88572200FE88BD /* MainInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		C8CE44361B8857F600FE88BD /* thumb_IMG_5553_1024.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb_IMG_5553_1024.jpg; sourceTree = "<group>"; };
+		C8CE44821B885A9300FE88BD /* TodayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		C8CE44831B885A9300FE88BD /* TodayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		C8CE44861B887D5700FE88BD /* cat_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cat_1024.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8CE43FD1B88520600FE88BD /* CoreMedia.framework in Frameworks */,
+				C8CE43FB1B88504D00FE88BD /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +98,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8CE441D1B8855F600FE88BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8CE44211B8855F600FE88BD /* NotificationCenter.framework in Frameworks */,
+				C8CE44341B88578600FE88BD /* CoreMedia.framework in Frameworks */,
+				C8CE44351B88578600FE88BD /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +119,8 @@
 			children = (
 				C8CE43BC1B883AA100FE88BD /* CatToday */,
 				C8CE43D61B883AA100FE88BD /* CatTodayTests */,
+				C8CE44221B8855F600FE88BD /* CatToday Widget */,
+				C8CE43E81B8847A300FE88BD /* Frameworks */,
 				C8CE43BB1B883AA100FE88BD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,6 +130,7 @@
 			children = (
 				C8CE43BA1B883AA100FE88BD /* CatToday.app */,
 				C8CE43D31B883AA100FE88BD /* CatTodayTests.xctest */,
+				C8CE44201B8855F600FE88BD /* CatToday Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,6 +176,37 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C8CE43E81B8847A300FE88BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C8CE43FC1B88520600FE88BD /* CoreMedia.framework */,
+				C8CE43FA1B88504D00FE88BD /* CoreData.framework */,
+				C8CE43E91B8847A300FE88BD /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C8CE44221B8855F600FE88BD /* CatToday Widget */ = {
+			isa = PBXGroup;
+			children = (
+				C8CE44861B887D5700FE88BD /* cat_1024.png */,
+				C8CE44361B8857F600FE88BD /* thumb_IMG_5553_1024.jpg */,
+				C8CE44821B885A9300FE88BD /* TodayViewController.h */,
+				C8CE44831B885A9300FE88BD /* TodayViewController.m */,
+				C8CE44321B88572200FE88BD /* MainInterface.storyboard */,
+				C8CE44231B8855F600FE88BD /* Supporting Files */,
+			);
+			path = "CatToday Widget";
+			sourceTree = "<group>";
+		};
+		C8CE44231B8855F600FE88BD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C8CE44241B8855F600FE88BD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,10 +217,12 @@
 				C8CE43B61B883AA100FE88BD /* Sources */,
 				C8CE43B71B883AA100FE88BD /* Frameworks */,
 				C8CE43B81B883AA100FE88BD /* Resources */,
+				C8CE43F91B8847A300FE88BD /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C8CE442B1B8855F600FE88BD /* PBXTargetDependency */,
 			);
 			name = CatToday;
 			productName = CatToday;
@@ -157,6 +247,23 @@
 			productReference = C8CE43D31B883AA100FE88BD /* CatTodayTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		C8CE441F1B8855F600FE88BD /* CatToday Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C8CE442D1B8855F600FE88BD /* Build configuration list for PBXNativeTarget "CatToday Widget" */;
+			buildPhases = (
+				C8CE441C1B8855F600FE88BD /* Sources */,
+				C8CE441D1B8855F600FE88BD /* Frameworks */,
+				C8CE441E1B8855F600FE88BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CatToday Widget";
+			productName = "CatToday Widget";
+			productReference = C8CE44201B8855F600FE88BD /* CatToday Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -172,6 +279,9 @@
 					C8CE43D21B883AA100FE88BD = {
 						CreatedOnToolsVersion = 6.4;
 						TestTargetID = C8CE43B91B883AA100FE88BD;
+					};
+					C8CE441F1B8855F600FE88BD = {
+						CreatedOnToolsVersion = 6.4;
 					};
 				};
 			};
@@ -190,6 +300,7 @@
 			targets = (
 				C8CE43B91B883AA100FE88BD /* CatToday */,
 				C8CE43D21B883AA100FE88BD /* CatTodayTests */,
+				C8CE441F1B8855F600FE88BD /* CatToday Widget */,
 			);
 		};
 /* End PBXProject section */
@@ -209,6 +320,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8CE441E1B8855F600FE88BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8CE44851B88623700FE88BD /* Images.xcassets in Resources */,
+				C8CE44871B887D5700FE88BD /* cat_1024.png in Resources */,
+				C8CE44331B88572200FE88BD /* MainInterface.storyboard in Resources */,
+				C8CE44371B8857F600FE88BD /* thumb_IMG_5553_1024.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +355,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C8CE441C1B8855F600FE88BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8CE44841B885A9300FE88BD /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -240,6 +370,11 @@
 			isa = PBXTargetDependency;
 			target = C8CE43B91B883AA100FE88BD /* CatToday */;
 			targetProxy = C8CE43D41B883AA100FE88BD /* PBXContainerItemProxy */;
+		};
+		C8CE442B1B8855F600FE88BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C8CE441F1B8855F600FE88BD /* CatToday Widget */;
+			targetProxy = C8CE442A1B8855F600FE88BD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -346,7 +481,8 @@
 		C8CE43DE1B883AA100FE88BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-3";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				INFOPLIST_FILE = CatToday/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -356,7 +492,8 @@
 		C8CE43DF1B883AA100FE88BD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-3";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				INFOPLIST_FILE = CatToday/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -397,6 +534,32 @@
 			};
 			name = Release;
 		};
+		C8CE442E1B8855F600FE88BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CatToday Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C8CE442F1B8855F600FE88BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "CatToday Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -422,6 +585,14 @@
 			buildConfigurations = (
 				C8CE43E11B883AA100FE88BD /* Debug */,
 				C8CE43E21B883AA100FE88BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C8CE442D1B8855F600FE88BD /* Build configuration list for PBXNativeTarget "CatToday Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8CE442E1B8855F600FE88BD /* Debug */,
+				C8CE442F1B8855F600FE88BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
