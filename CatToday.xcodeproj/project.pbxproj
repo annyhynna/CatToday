@@ -116,6 +116,7 @@
 		DB57581F1B88A11A006AD7FC /* WhiteNaviVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhiteNaviVC.m; sourceTree = "<group>"; };
 		DB5758211B88B29C006AD7FC /* MenuImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuImage.h; sourceTree = "<group>"; };
 		DB5758221B88B29C006AD7FC /* MenuImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuImage.m; sourceTree = "<group>"; };
+		DBA4005E1B88E38200DF5131 /* CatToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CatToday.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +177,7 @@
 		C8CE43BC1B883AA100FE88BD /* CatToday */ = {
 			isa = PBXGroup;
 			children = (
+				DBA4005E1B88E38200DF5131 /* CatToday.entitlements */,
 				C8CE43C11B883AA100FE88BD /* AppDelegate.h */,
 				C8CE43C21B883AA100FE88BD /* AppDelegate.m */,
 				C8CE43C41B883AA100FE88BD /* ViewController.h */,
@@ -370,6 +372,18 @@
 				TargetAttributes = {
 					C8CE43B91B883AA100FE88BD = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = CA87FF3BME;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.SafariKeychain = {
+								enabled = 0;
+							};
+						};
 					};
 					C8CE43D21B883AA100FE88BD = {
 						CreatedOnToolsVersion = 6.4;
@@ -652,9 +666,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = CatToday/CatToday.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CatToday/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -664,9 +682,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = CatToday/CatToday.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CatToday/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
