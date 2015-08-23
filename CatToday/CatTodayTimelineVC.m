@@ -14,6 +14,7 @@
 #import "Constants.h"
 #import "MenuImage.h"
 #import "AppDelegate.h"
+#import "Azure.h"
 
 //pods
 #import <Parse/Parse.h>
@@ -25,6 +26,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
 
 @interface CatTodayTimelineVC ()
 @property (nonatomic, strong) UILabel *networkView;
+@property (nonatomic, strong) Azure *azure;
 @end
 
 @implementation CatTodayTimelineVC
@@ -61,6 +63,14 @@ static NSString *cellIdentifier = @"cellIdentifier";
 {
 	[super viewWillAppear:animated];
 	[self jumpToPhoto];
+}
+
+- (Azure *)azure
+{
+	if (!_azure) {
+		_azure = [[Azure alloc] init];
+	}
+	return _azure;
 }
 
 - (void)uiSetting
@@ -136,21 +146,91 @@ static NSString *cellIdentifier = @"cellIdentifier";
 	return nil;
 }
 
+- (UIImage *)imageByDrawingRectOnImage:(UIImage *)image rectString:(NSString *)rectString
+{
+	CGRect drawRect = CGRectFromString(rectString);
+
+	// begin a graphics context of sufficient size
+	UIGraphicsBeginImageContext(image.size);
+
+	// draw original image into the context
+	[image drawAtPoint:CGPointZero];
+
+	// get the context for CoreGraphics
+	CGContextRef ctx = UIGraphicsGetCurrentContext();
+
+	// set stroking color and draw circle
+	[[UIColor yellowColor] setStroke];
+//	drawRect = CGRectInset(drawRect, 30, 30);
+
+//	// make circle rect 5 px from border
+//	CGRect circleRect = CGRectMake(0, 0,
+//								   image.size.width,
+//								   image.size.height);
+//	circleRect = CGRectInset(circleRect, 5, 5);
+
+	// draw circle
+	CGContextStrokeRect(ctx, drawRect);
+
+	// make image out of bitmap context
+	UIImage *retImage = UIGraphicsGetImageFromCurrentImageContext();
+
+	// free the context
+	UIGraphicsEndImageContext();
+
+	return retImage;
+}
+
 - (PFCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
 	// NSUInteger index = indexPath.item;
 	//	NSLog(@"%s %lu %ld", __PRETTY_FUNCTION__, (unsigned long)index, (long)indexPath.row);
 
 	CatCollectionViewCell *cell = (CatCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
 	cell.imageView.image = nil;
+	cell.faceRect = CGRectZero;
 	cell.nameLabel.text = [object getName];
 	cell.infoTextView.text = [object getInfo];
 
 	if (object && [object objectForKey:CAT_CLASS_KEY_PHOTO]) {
 		cell.imageView.file = [object objectForKey:CAT_CLASS_KEY_PHOTO];
+		NSLog(@"%s %@ %@", __PRETTY_FUNCTION__, NSStringFromClass(self.class), cell.imageView.file.url);
+
+		cell.faceView.frame = CGRectZero;
+		[Azure azureFaceAPI:cell.imageView.file.url withBlock:^(NSMutableDictionary *json){
+			NSLog(@"%s %@", __PRETTY_FUNCTION__, [json class]);
+			if (json && json[@"faceRectangle"]) {
+				CGRect rect = CGRectMake([self dic:json ForKey:@"left"],
+										 [self dic:json ForKey:@"top"],
+										 [self dic:json ForKey:@"width"],
+										 [self dic:json ForKey:@"height"]);
+				[self.azure setRect:NSStringFromCGRect(rect) withID:object.objectId];
+			}
+		}];
 
 		// PFQTVC will take care of asynchronously downloading files, but will only load them when the tableview is not moving. If the data is there, let's load it right away.
 		if ([cell.imageView.file isDataAvailable]) {
-			[cell.imageView loadInBackground];
+			[cell.imageView loadInBackground:^(UIImage *image, NSError *error) {
+
+				cell.imageView.file = nil;
+				cell.imageView.image = [self imageByDrawingRectOnImage:image
+															rectString:[self.azure faceRectForID:object.objectId]];
+				/*
+				NSLog(@"%s %f %f", __PRETTY_FUNCTION__, image.size.width, image.size.height);
+				NSLog(@"%s %f %f", __PRETTY_FUNCTION__, cell.imageView.frame.size.width, cell.imageView.frame.size.height);
+
+				cell.oriImgSize = image.size;
+
+				CGRect rect = CGRectMake((238.0/600.0)*160, ((79.0+97.0)/600.0)*160, (165.0/600.0)*160, (165.0/600.0)*160);
+				UIView *faceView = [[UIView alloc] initWithFrame:rect];
+				faceView.backgroundColor = [UIColor testRed];
+				cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
+				[cell.imageView addSubview:faceView];
+//				height = 165;
+//				left = 238;
+//				top = 79;
+//				width = 165;
+				 */
+			}];
 		}
 		else {
 //			[cell.imageView loadInBackground:^(UIImage *image, NSError *error) {
@@ -168,6 +248,15 @@ static NSString *cellIdentifier = @"cellIdentifier";
 	}
 
 	return cell;
+}
+
+- (CGFloat)dic:(NSDictionary *)dic ForKey:(NSString *)key
+{
+	if (dic && dic[@"faceRectangle"]) {
+		NSString *val = dic[@"faceRectangle"][key];
+		return [val doubleValue];
+	}
+	return 0.0;
 }
 
 #pragma mark - jump to photo

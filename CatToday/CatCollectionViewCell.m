@@ -33,7 +33,7 @@
 		[self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
 			make.centerX.equalTo(self.contentView.mas_centerX);
 			make.top.equalTo(self.contentView.mas_top).offset(44);
-			make.width.equalTo(self.contentView.mas_width).multipliedBy(0.5);
+			make.width.equalTo(self.contentView.mas_width).multipliedBy(0.9);
 			make.width.equalTo(self.imageView.mas_height);
 		}];
 
@@ -47,6 +47,15 @@
 		}];
 	}
 	return self;
+}
+
+- (UIView *)faceView
+{
+	if (!_faceView) {
+		_faceView = [[UIView alloc] init];
+		_faceView.backgroundColor = [UIColor testRed];
+	}
+	return _faceView;
 }
 
 - (UILabel *)nameLabel

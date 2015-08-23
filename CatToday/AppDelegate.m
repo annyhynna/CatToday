@@ -26,7 +26,7 @@
 	[Parse setApplicationId:appID
 				  clientKey:clKey];
 
-	
+
 
     return YES;
 }

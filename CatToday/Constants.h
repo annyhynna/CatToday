@@ -9,6 +9,7 @@
 #ifndef CatToday_Constants_h
 #define CatToday_Constants_h
 
+//#define CAT_CLASS @"Face"
 #define CAT_CLASS @"Cat"
 #define CAT_CLASS_KEY_NAME @"name"
 #define CAT_CLASS_KEY_PHOTO @"photo"
