@@ -41,7 +41,7 @@
 	NSString* string = [array componentsJoinedByString:@"&"];
 	path = [path stringByAppendingFormat:@"?%@", string];
 
-	NSLog(@"%@", path);
+	NSLog(@"%s %@", __PRETTY_FUNCTION__, NSStringFromClass(self.class));
 
 	NSMutableURLRequest* _request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:path]];
 	[_request setHTTPMethod:@"POST"];
@@ -78,7 +78,7 @@
 			NSLog(@"Could not parse loaded json with error:%@", error);
 		}
 
-		if (block && json.count>0) {
+		if (block && [json isKindOfClass:[NSArray class]] && json.count>0) {
 			block(json[0]);
 		}
 		//NSLog(@"%@", json);

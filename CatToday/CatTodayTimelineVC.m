@@ -193,27 +193,32 @@ static NSString *cellIdentifier = @"cellIdentifier";
 
 	if (object && [object objectForKey:CAT_CLASS_KEY_PHOTO]) {
 		cell.imageView.file = [object objectForKey:CAT_CLASS_KEY_PHOTO];
-		NSLog(@"%s %@ %@", __PRETTY_FUNCTION__, NSStringFromClass(self.class), cell.imageView.file.url);
 
 		cell.faceView.frame = CGRectZero;
-		[Azure azureFaceAPI:cell.imageView.file.url withBlock:^(NSMutableDictionary *json){
-			NSLog(@"%s %@", __PRETTY_FUNCTION__, [json class]);
-			if (json && json[@"faceRectangle"]) {
-				CGRect rect = CGRectMake([self dic:json ForKey:@"left"],
-										 [self dic:json ForKey:@"top"],
-										 [self dic:json ForKey:@"width"],
-										 [self dic:json ForKey:@"height"]);
-				[self.azure setRect:NSStringFromCGRect(rect) withID:object.objectId];
-			}
-		}];
+		if (![self.azure faceRectForID:object.objectId]) {
+			[self.azure setRect:NSStringFromCGRect(CGRectZero) withID:object.objectId];
+
+			[Azure azureFaceAPI:cell.imageView.file.url withBlock:^(NSMutableDictionary *json){
+				NSLog(@"%s %@", __PRETTY_FUNCTION__, [json class]);
+				if (json && json[@"faceRectangle"]) {
+					CGRect rect = CGRectMake([self dic:json ForKey:@"left"],
+											 [self dic:json ForKey:@"top"],
+											 [self dic:json ForKey:@"width"],
+											 [self dic:json ForKey:@"height"]);
+					[self.azure setRect:NSStringFromCGRect(rect) withID:object.objectId];
+				}
+			}];
+		}
 
 		// PFQTVC will take care of asynchronously downloading files, but will only load them when the tableview is not moving. If the data is there, let's load it right away.
 		if ([cell.imageView.file isDataAvailable]) {
 			[cell.imageView loadInBackground:^(UIImage *image, NSError *error) {
 
 				cell.imageView.file = nil;
-				cell.imageView.image = [self imageByDrawingRectOnImage:image
-															rectString:[self.azure faceRectForID:object.objectId]];
+				if (![[self.azure faceRectForID:object.objectId] isEqualToString:NSStringFromCGRect(CGRectZero)]) {
+					cell.imageView.image = [self imageByDrawingRectOnImage:image
+																rectString:[self.azure faceRectForID:object.objectId]];
+				}
 				/*
 				NSLog(@"%s %f %f", __PRETTY_FUNCTION__, image.size.width, image.size.height);
 				NSLog(@"%s %f %f", __PRETTY_FUNCTION__, cell.imageView.frame.size.width, cell.imageView.frame.size.height);
