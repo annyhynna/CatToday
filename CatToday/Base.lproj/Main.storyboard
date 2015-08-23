@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--CatToday-->
+        <!--Adogcat-->
         <scene sceneID="6kK-7j-GH0">
             <objects>
                 <collectionViewController id="Wsc-jl-mJF" customClass="CatTodayTimelineVC" sceneMemberID="viewController">
@@ -29,7 +29,7 @@
                         </connections>
                     </collectionView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="CatToday" id="4Q1-xY-ibH"/>
+                    <navigationItem key="navigationItem" title="Adogcat" id="4Q1-xY-ibH"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <userDefinedRuntimeAttributes>
