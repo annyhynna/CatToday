@@ -49,6 +49,15 @@
 	return self;
 }
 
+- (UIView *)faceView
+{
+	if (!_faceView) {
+		_faceView = [[UIView alloc] init];
+		_faceView.backgroundColor = [UIColor testRed];
+	}
+	return _faceView;
+}
+
 - (UILabel *)nameLabel
 {
 	if (!_nameLabel) {

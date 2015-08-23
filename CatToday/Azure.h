@@ -9,5 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface Azure : NSObject
-+ (void)azureFaceAPI:(NSString *)imageUrl;
++ (void)azureFaceAPI:(NSString *)imageUrl withBlock:(void (^)(NSMutableDictionary *json))block;
+
+@property (nonatomic, strong) NSMutableDictionary *faceRectDic;
+- (NSString *)faceRectForID:(NSString *)objectID;
+- (void)setRect:(NSString *)rect withID:(NSString *)objectID;
+
 @end

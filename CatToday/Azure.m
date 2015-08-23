@@ -10,7 +10,25 @@
 #import "PrivateKey.h"
 
 @implementation Azure
-+ (void)azureFaceAPI:(NSString *)imageUrl
+- (NSMutableDictionary *)faceRectDic
+{
+	if (!_faceRectDic) {
+		_faceRectDic = [[NSMutableDictionary alloc] init];
+	}
+	return _faceRectDic;
+}
+
+- (NSString *)faceRectForID:(NSString *)objectID
+{
+	return self.faceRectDic[objectID];
+}
+
+- (void)setRect:(NSString *)rect withID:(NSString *)objectID
+{
+	self.faceRectDic[objectID] = rect;
+}
+
++ (void)azureFaceAPI:(NSString *)imageUrl withBlock:(void (^)(NSMutableDictionary *json))block
 {
 	//NSString* path = @"https://api.projectoxford.ai/face/v0/identifications";
 	NSString *path = @"https://api.projectoxford.ai/face/v0/detections?analyzesFaceLandmarks=false&analyzesAge=false&analyzesGender=false&analyzesHeadPose=false";
@@ -59,7 +77,10 @@
 			NSLog(@"Could not parse loaded json with error:%@", error);
 		}
 
-		NSLog(@"%@", json);
+		if (block) {
+			block(json);
+		}
+		//NSLog(@"%@", json);
 		_connectionData = nil;
 	}
 }

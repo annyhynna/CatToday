@@ -12,4 +12,9 @@
 @interface CatCollectionViewCell : PFCollectionViewCell
 @property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) UITextView *infoTextView;
+
+//azure face api
+@property (nonatomic) CGRect faceRect;
+@property (nonatomic) CGSize oriImgSize;
+@property (nonatomic, strong) UIView *faceView;
 @end
