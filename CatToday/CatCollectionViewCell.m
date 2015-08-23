@@ -33,7 +33,7 @@
 		[self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
 			make.centerX.equalTo(self.contentView.mas_centerX);
 			make.top.equalTo(self.contentView.mas_top).offset(44);
-			make.width.equalTo(self.contentView.mas_width).multipliedBy(0.9);
+			make.width.equalTo(self.contentView.mas_width).multipliedBy(0.7);
 			make.width.equalTo(self.imageView.mas_height);
 		}];
 
@@ -42,7 +42,7 @@
 		[self.infoTextView mas_makeConstraints:^(MASConstraintMaker *make) {
 			make.leading.equalTo(self.contentView.mas_leading).offset(InfoSpacing);
 			make.trailing.equalTo(self.contentView.mas_trailing).offset(-InfoSpacing);
-			make.bottom.equalTo(self.contentView.mas_bottom).offset(-3*InfoSpacing);
+			make.bottom.equalTo(self.contentView.mas_bottom).offset(-InfoSpacing);
 			make.top.equalTo(self.nameLabel.mas_bottom).offset(InfoSpacing);
 		}];
 	}
