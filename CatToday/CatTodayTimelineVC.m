@@ -146,11 +146,39 @@ static NSString *cellIdentifier = @"cellIdentifier";
 	return nil;
 }
 
-- (void)drawFaceView
+- (UIImage *)imageByDrawingRectOnImage:(UIImage *)image rectString:(NSString *)rectString
 {
-	if (cell.imageView.image && cell) {
-		<#statements#>
-	}
+	CGRect drawRect = CGRectFromString(rectString);
+
+	// begin a graphics context of sufficient size
+	UIGraphicsBeginImageContext(image.size);
+
+	// draw original image into the context
+	[image drawAtPoint:CGPointZero];
+
+	// get the context for CoreGraphics
+	CGContextRef ctx = UIGraphicsGetCurrentContext();
+
+	// set stroking color and draw circle
+	[[UIColor yellowColor] setStroke];
+//	drawRect = CGRectInset(drawRect, 30, 30);
+
+//	// make circle rect 5 px from border
+//	CGRect circleRect = CGRectMake(0, 0,
+//								   image.size.width,
+//								   image.size.height);
+//	circleRect = CGRectInset(circleRect, 5, 5);
+
+	// draw circle
+	CGContextStrokeRect(ctx, drawRect);
+
+	// make image out of bitmap context
+	UIImage *retImage = UIGraphicsGetImageFromCurrentImageContext();
+
+	// free the context
+	UIGraphicsEndImageContext();
+
+	return retImage;
 }
 
 - (PFCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
@@ -169,7 +197,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
 
 		cell.faceView.frame = CGRectZero;
 		[Azure azureFaceAPI:cell.imageView.file.url withBlock:^(NSMutableDictionary *json){
-			NSLog(@"%s %@", __PRETTY_FUNCTION__, json);
+			NSLog(@"%s %@", __PRETTY_FUNCTION__, [json class]);
 			if (json && json[@"faceRectangle"]) {
 				CGRect rect = CGRectMake([self dic:json ForKey:@"left"],
 										 [self dic:json ForKey:@"top"],
@@ -183,6 +211,10 @@ static NSString *cellIdentifier = @"cellIdentifier";
 		if ([cell.imageView.file isDataAvailable]) {
 			[cell.imageView loadInBackground:^(UIImage *image, NSError *error) {
 
+				cell.imageView.file = nil;
+				cell.imageView.image = [self imageByDrawingRectOnImage:image
+															rectString:[self.azure faceRectForID:object.objectId]];
+				/*
 				NSLog(@"%s %f %f", __PRETTY_FUNCTION__, image.size.width, image.size.height);
 				NSLog(@"%s %f %f", __PRETTY_FUNCTION__, cell.imageView.frame.size.width, cell.imageView.frame.size.height);
 
@@ -197,6 +229,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
 //				left = 238;
 //				top = 79;
 //				width = 165;
+				 */
 			}];
 		}
 		else {
@@ -219,8 +252,11 @@ static NSString *cellIdentifier = @"cellIdentifier";
 
 - (CGFloat)dic:(NSDictionary *)dic ForKey:(NSString *)key
 {
-	NSString *val = dic[@"faceRectangle"][key];
-	return [val doubleValue];
+	if (dic && dic[@"faceRectangle"]) {
+		NSString *val = dic[@"faceRectangle"][key];
+		return [val doubleValue];
+	}
+	return 0.0;
 }
 
 #pragma mark - jump to photo

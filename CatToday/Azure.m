@@ -25,6 +25,7 @@
 
 - (void)setRect:(NSString *)rect withID:(NSString *)objectID
 {
+	NSLog(@"%s %@", __PRETTY_FUNCTION__, rect);
 	self.faceRectDic[objectID] = rect;
 }
 
@@ -63,7 +64,7 @@
 	else
 	{
 		NSError* error = nil;
-		NSMutableDictionary* json = nil;
+		NSMutableArray* json = nil;
 		NSString* dataString = [[NSString alloc] initWithData:_connectionData encoding:NSUTF8StringEncoding];
 		NSLog(@"%@", dataString);
 
@@ -77,8 +78,8 @@
 			NSLog(@"Could not parse loaded json with error:%@", error);
 		}
 
-		if (block) {
-			block(json);
+		if (block && json.count>0) {
+			block(json[0]);
 		}
 		//NSLog(@"%@", json);
 		_connectionData = nil;

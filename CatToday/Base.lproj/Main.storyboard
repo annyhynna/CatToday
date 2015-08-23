@@ -33,7 +33,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="parseClassName" value="Face"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="parseClassName" value="Cat"/>
                     </userDefinedRuntimeAttributes>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mCQ-zn-x6P" userLabel="First Responder" sceneMemberID="firstResponder"/>
